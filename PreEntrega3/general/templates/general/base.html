@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load static %}
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'general/css/styles.css' %}">
+    </head>
+    <body>
+      <header class="head">
+        <h1 id="h1Titulo"> 
+            <i class="em em-keyboard" aria-role="presentation" aria-label=""></i> 
+            Libreria Cosmere
+        </h1>
+      </header>
+        <div class="navbar">
+            <a href="{% url 'Home'%}">Home</a>
+
+            <div class="dropdown">
+              <button class="dropbtn">Empleados
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{% url 'Empleados'%}">Carga</a>
+                <a href="{% url 'buscar_empleado' %}">Busqueda</a>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button class="dropbtn">Clientes
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{% url 'Clientes' %}">Carga</a>
+                <a href="{% url 'buscar_cliente' %}">Busqueda</a>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button class="dropbtn">Libros
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{% url 'Libros' %}">Carga</a>
+                <a href="{% url 'buscar_libro' %}">Busqueda</a>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button class="dropbtn">Autores
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{% url 'Escritores' %}">Carga</a>
+                <a href="{% url 'buscar_escritor' %}">Busqueda</a>
+              </div>
+            </div>
+
+            <a href="{% url 'Generos'%}">Generos</a>
+
+          </div>
+          
+          {% block contenido_variable %}
+          {% endblock  %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>

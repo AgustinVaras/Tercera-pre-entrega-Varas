@@ -1,0 +1,22 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Clientes
+{% endblock title %}
+
+{%block contenido_variable%}
+<h1>
+    Formulario Clientes
+</h1>
+<div class="form">
+    <form action="" method="POST" id="alignment">
+        {% csrf_token %}
+            {{ miformulario.as_table }}
+        <div>
+            <input type = "Submit" value="Enviar">
+        </div>
+    </form>
+</div>   
+{% endblock %}

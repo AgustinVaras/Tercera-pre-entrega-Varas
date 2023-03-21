@@ -1,0 +1,38 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Libros
+{% endblock title %}
+
+{%block contenido_variable%}
+<h1>
+    Formulario Buscar Libros
+</h1>
+<div class="form">
+    <form action="" method="POST" id="alignment">
+        {% csrf_token %}
+            {{ miformulario.as_table }}
+        <div>
+            <input type = "Submit" value="Enviar">
+        </div>
+    </form>
+    
+</div>
+<div>
+    <table>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Genero</th>
+        <th>Resumen</th>
+        <tr>
+            <td> {{ data.titulo }} </td>
+            <td> {{ data.autor }} </td>
+            <td> {{ data.genero }} </td>
+            <td> {{ data.resumen }} </td>
+        </tr>
+
+    </table>
+</div>  
+{% endblock %}

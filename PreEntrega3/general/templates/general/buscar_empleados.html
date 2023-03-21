@@ -1,0 +1,41 @@
+{% extends 'general/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Empleados
+{% endblock title %}
+
+{%block contenido_variable%}
+
+<h1>
+    Formulario Buscar Empleados
+</h1>
+<div class="form">
+    <form action="" method="POST" id="alignment">
+        {% csrf_token %}
+            {{ miformulario.as_table }}
+        <div>
+            <input type = "Submit" value="Enviar">
+        </div>
+    </form>
+    
+</div>
+<div>
+    <table>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Nacimiento</th>
+        <th>Genero</th>
+        <tr>
+            <td> {{ data.dni }} </td>
+            <td> {{ data.nombre }} </td>
+            <td> {{ data.apellido }} </td>
+            <td> {{ data.nacimiento }} </td>
+            <td> {{ data.genero }} </td>
+        </tr>
+
+    </table>
+</div>   
+{% endblock %}
