@@ -18,7 +18,10 @@ Pasos para el funcionamiento de la página:
     
     3° Iniciar el servidor
     
-    4° Una vez iniciado debería empezar dentro de la página home para permitirnos navegar a traves de la barra de navegación de la web a las diferentes secciones, c/u tiene una seccion de carga de datos (a excepción de Generos que solo tiene para carga de datos, a futuro pienso cambiarlo para que te muestre todos los libros pertenecientes a ese genero), para generar un registro en la base de datos correspondiente a la sección, y una de busqueda, que nos permitira buscar un registro dentro de la base de datos, también correspondiente a su sección. 
+    4° Una vez iniciado debería empezar dentro de la página home para permitirnos navegar a traves de la barra de navegación de la web a las diferentes secciones, 
+    c/u tiene una seccion de carga de datos (a excepción de Generos que solo tiene para carga de datos, a futuro pienso cambiarlo para que te muestre todos los libros
+    pertenecientes a ese genero), para generar un registro en la base de datos correspondiente a la sección, y una de busqueda, que nos permitira buscar un registro
+    dentro de la base de datos, también correspondiente a su sección. 
     
         Los modelos de la carga de datos para cada formulario son los siguientes:
         
