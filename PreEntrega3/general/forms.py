@@ -26,15 +26,25 @@ class CargarAutorForm(forms.Form):
     apellido = forms.CharField(max_length=25)
     nacimiento = forms.DateField()
     muerte = forms.DateField(required=False)
-
-    
+   
 class CargarLibroForm(forms.Form):
-    titulo = forms.CharField(max_length=50,)
+    titulo = forms.CharField(max_length=50)
     autor = forms.ModelChoiceField(queryset=Autor.objects.all(), empty_label="Vacio")
     genero = forms.ModelChoiceField(queryset=Genero.objects.all(),empty_label="Vacio")
     resumen = forms.CharField(max_length=1000,widget=forms.Textarea)   
 
-
-
 class CargarGeneroForm(forms.Form):
     nombre = forms.CharField(max_length=100, help_text="Ingrese el nombre del género (ej: Ciencia Ficción, Poesía, Fantasía, etc)")
+
+class BuscarEmpleadoForm(forms.Form):
+    dni = forms.IntegerField()
+
+class BuscarClienteForm(forms.Form):
+    dni = forms.IntegerField()
+
+class BuscarAutorForm(forms.Form):
+    nombre = forms.CharField(max_length=25)
+    apellido = forms.CharField(max_length=25)
+
+class BuscarLibroForm(forms.Form):
+    titulo = forms.CharField(max_length=50)

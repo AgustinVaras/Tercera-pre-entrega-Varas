@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from general.models import Cliente, Empleado, Libro, Autor, Genero
 from general.forms import CargarClienteForm, CargarEmpleadoForm, CargarAutorForm, CargarLibroForm, CargarGeneroForm
+from general.forms import BuscarEmpleadoForm, BuscarClienteForm, BuscarAutorForm, BuscarLibroForm
 
 # Create your views here.
 def Home(request):
@@ -110,16 +111,74 @@ def carga_generos(request):
 
 #Views Formularios
 def buscar_empleados(request):
-    return render(request, 'general/empleados.html')
+    if request.method == "POST":
+        
+        miformulario = BuscarEmpleadoForm(request.POST)
+
+        if miformulario.is_valid():
+            info = miformulario.cleaned_data
+
+            empleado = Empleado.objects.get(dni=info["dni"])
+
+            miformulario=BuscarEmpleadoForm()
+
+            return render(request, "general/buscar_empleados.html" , {"data": empleado,"miformulario":miformulario})
+    else:
+        miformulario = BuscarEmpleadoForm()
+
+    return render(request, "general/buscar_empleados.html", {"miformulario": miformulario})
 
 def buscar_clientes(request):
-    return render(request, 'general/clientes.html')
+    if request.method == "POST":
+        
+        miformulario = BuscarClienteForm(request.POST)
+
+        if miformulario.is_valid():
+            info = miformulario.cleaned_data
+
+            cliente = Cliente.objects.get(dni=info["dni"])
+
+            miformulario=BuscarClienteForm()
+
+            return render(request, "general/buscar_clientes.html" , {"data": cliente,"miformulario":miformulario})
+    else:
+        miformulario = BuscarClienteForm()
+
+    return render(request, "general/buscar_clientes.html", {"miformulario": miformulario})
 
 def buscar_libros(request):
-    return render(request, 'general/libros.html')
+    if request.method == "POST":
+        
+        miformulario = BuscarLibroForm(request.POST)
+
+        if miformulario.is_valid():
+            info = miformulario.cleaned_data
+
+            libro = Libro.objects.get(titulo=info["titulo"])
+
+            miformulario=BuscarLibroForm()
+
+            return render(request, "general/buscar_libros.html" , {"data":libro,"miformulario":miformulario})
+    else:
+        miformulario = BuscarLibroForm()
+
+    return render(request, "general/buscar_libros.html", {"miformulario": miformulario})
 
 def buscar_escritores(request):
-    return render(request, 'general/escritores.html')
+    if request.method == "POST":
+        
+        miformulario = BuscarAutorForm(request.POST)
 
-def buscar_generos(request):
-    return render(request, 'general/generos.html')
+        if miformulario.is_valid():
+            info = miformulario.cleaned_data
+
+            escritor = Autor.objects.get(nombre=info["nombre"], apellido=info["apellido"])
+
+            miformulario=BuscarAutorForm()
+
+            return render(request, "general/buscar_escritores.html" , {"data":escritor,"miformulario":miformulario})
+    else:
+        miformulario = BuscarAutorForm()
+
+    return render(request, "general/buscar_escritores.html", {"miformulario": miformulario})
+

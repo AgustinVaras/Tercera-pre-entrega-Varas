@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from general.views import Home, carga_empleados, carga_clientes, carga_libros, carga_escritores, carga_generos, buscar_empleados, buscar_clientes, buscar_libros, buscar_escritores, buscar_generos
+from general.views import Home, carga_empleados, carga_clientes, carga_libros, carga_escritores, carga_generos, buscar_empleados, buscar_clientes, buscar_libros, buscar_escritores
 
 
 urlpatterns = [
@@ -14,5 +14,4 @@ urlpatterns = [
     path('buscar.cliente/', buscar_clientes, name='buscar_cliente'),
     path('buscar.libro/', buscar_libros, name='buscar_libro'),
     path('buscar.escritor/', buscar_escritores, name='buscar_escritor'),
-    path('buscar.genero', buscar_generos, name='buscar_generos'),
 ]

@@ -29,7 +29,7 @@
               </button>
               <div class="dropdown-content">
                 <a href="{% url 'Empleados'%}">Carga</a>
-                <a href="#">Busqueda</a>
+                <a href="{% url 'buscar_empleado' %}">Busqueda</a>
               </div>
             </div>
 
@@ -39,7 +39,7 @@
               </button>
               <div class="dropdown-content">
                 <a href="{% url 'Clientes' %}">Carga</a>
-                <a href="#">Busqueda</a>
+                <a href="{% url 'buscar_cliente' %}">Busqueda</a>
               </div>
             </div>
 
@@ -49,7 +49,7 @@
               </button>
               <div class="dropdown-content">
                 <a href="{% url 'Libros' %}">Carga</a>
-                <a href="#">Busqueda</a>
+                <a href="{% url 'buscar_libro' %}">Busqueda</a>
               </div>
             </div>
 
@@ -59,19 +59,11 @@
               </button>
               <div class="dropdown-content">
                 <a href="{% url 'Escritores' %}">Carga</a>
-                <a href="#">Busqueda</a>
+                <a href="{% url 'buscar_escritor' %}">Busqueda</a>
               </div>
             </div>
 
-            <div class="dropdown">
-              <button class="dropbtn">Generos
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="{% url 'Generos' %}">Carga</a>
-                <a href="#">Busqueda</a>
-              </div>
-            </div>
+            <a href="{% url 'Generos'%}">Generos</a>
 
           </div>
           
