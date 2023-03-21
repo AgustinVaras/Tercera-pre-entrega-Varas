@@ -50,7 +50,7 @@ class Genero(models.Model):
 class Libro(models.Model):
     titulo = models.CharField(max_length=50, unique=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
-    genero = models.ManyToManyField(Genero, help_text="Seleccione un genero para el libro")
+    genero = models.ForeignKey(Genero, help_text="Seleccione un genero para el libro", on_delete=models.SET_NULL, null=True)
     resumen = models.TextField(max_length=1000, help_text="Ingrese un breve resumen del libro")
 
     def __str__(self) -> str:

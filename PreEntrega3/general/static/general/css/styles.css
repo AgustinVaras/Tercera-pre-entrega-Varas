@@ -145,3 +145,21 @@
   border-radius: 100px;
   height: 243px;
 }
+
+th{
+  text-align:left;
+}
+
+.form {
+  display: block;
+  text-align: center;
+  border-style: solid;
+  margin-left: 300px;
+  padding: 50px;
+  width:70%
+}
+#alignment{
+  margin-left: auto;
+  margin-right: auto;
+
+}

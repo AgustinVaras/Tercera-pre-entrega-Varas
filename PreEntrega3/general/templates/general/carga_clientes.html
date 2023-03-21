@@ -3,24 +3,20 @@
 {% load static %}
 
 {% block title %}
-    Index
+    Clientes
 {% endblock title %}
 
 {%block contenido_variable%}
-<section class="Presentacion">
-    <div class="caja-presentacion">
-        <center>
-            <form action="" method="POST">
-                {% csrf_token %}
-                <h1>
-                    Formulario Clientes
-                </h1>
-                    {{ miformulario.as_table }}
-                <div>
-                    <input type = "Submit" value="Enviar">
-                </div>
-            </form>
-        </center>
-    </div>
-</section>
+<h1>
+    Formulario Clientes
+</h1>
+<div class="form">
+    <form action="" method="POST" id="alignment">
+        {% csrf_token %}
+            {{ miformulario.as_table }}
+        <div>
+            <input type = "Submit" value="Enviar">
+        </div>
+    </form>
+</div>   
 {% endblock %}

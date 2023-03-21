@@ -3,20 +3,20 @@
 {% load static %}
 
 {% block title %}
-    Index
+    Generos
 {% endblock title %}
 
 {%block contenido_variable%}
-<section class="Presentacion">
-    <div class="caja-presentacion">
-        <div class="txtPresentacion">
-            <h2>
-                Bienvenidos a la seccion de generos! 
-            </h2>
-            <p>
-                Puede seleccionar una seccion de los desplegables arriba
-            </p>
+<h1>
+    Formulario Generos
+</h1>
+<div class="form">
+    <form action="" method="POST" id="alignment">
+        {% csrf_token %}
+            {{ miformulario.as_table }}
+        <div>
+            <input type = "Submit" value="Enviar">
         </div>
-    </div>
-</section>
+    </form>
+</div>   
 {% endblock %}
