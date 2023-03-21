@@ -46,7 +46,9 @@ Pasos para el funcionamiento de la página:
                      apellido (char)
                      nacimiento (datetime con formato de fecha español 'dia/mes/año')
                      muerte (datetime con formato de fecha español 'dia/mes/año' que puede ser null en caso de que el autor no falleciera)
+                     
             Genero:  nombre (char)
+            
             Libro:   titulo(char)
                      autor(foreign key que referencia a la base de datos de Autores, en caso de no haber un autor cargado todavía aparece como "Vacio")
                      genero(foreign key que referencia a la base de datos de Generos, en caso de no haber un genero cargado todavía aparece como "Vacio")
