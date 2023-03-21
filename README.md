@@ -4,10 +4,15 @@
 Repositorio para la 3er Pre-Entrega del trabajo final del curso de Coderhouse
 
 En este proyecto web con Django, busqué generar una web de manejo de la base de datos de una librería que permite dar de alta:
+
     -Empleados
+    
     -Clientes
+    
     -Autores
+    
     -Libros
+    
     -Generos(para los libros)
     
 Pasos para el funcionamiento de la página:
